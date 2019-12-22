@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zfq-WJ-2NH">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="LFg-4b-BwL">
+            <objects>
+                <navigationController id="zfq-WJ-2NH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j3Y-yX-MQa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vbT-uv-qAQ" kind="relationship" relationship="rootViewController" id="AwD-1J-pLU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSR-FV-vE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-725" y="76"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="ICR-id-Vmc">
+            <objects>
+                <viewController id="vbT-uv-qAQ" customClass="MainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fAa-Q5-tui">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否hook网址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8Q-1F-JCh">
+                                <rect key="frame" x="117" y="184" width="108" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="bNt-aD-HJ2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1X-x1-b4X">
+                                <rect key="frame" x="161" y="280" width="92" height="30"/>
+                                <state key="normal" title="点击跳转百度"/>
+                                <connections>
+                                    <action selector="loadBaiDuAction:" destination="vbT-uv-qAQ" eventType="touchUpInside" id="rBC-AK-3gg"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UjI-g2-7By">
+                                <rect key="frame" x="232" y="196" width="51" height="30"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="说明: 开启了hook网址的开关后点击百度会跳转到腾讯新闻,点击网易会跳转到新浪新闻,关闭状态下正常访问" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpL-w3-YQA">
+                                <rect key="frame" x="77" y="437" width="260" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="qwy-zu-Lgh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuB-1k-F6A" userLabel="点击跳转网易">
+                                <rect key="frame" x="161" y="364" width="92" height="30"/>
+                                <state key="normal" title="点击跳转网易"/>
+                                <connections>
+                                    <action selector="loadSouHuAction:" destination="vbT-uv-qAQ" eventType="touchUpInside" id="y6F-02-XbU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m8Q-1F-JCh" firstAttribute="top" secondItem="pSi-P9-KIi" secondAttribute="top" constant="96" id="98y-VY-1jh"/>
+                            <constraint firstItem="RpL-w3-YQA" firstAttribute="top" secondItem="UuB-1k-F6A" secondAttribute="bottom" constant="43" id="G3R-3i-xNB"/>
+                            <constraint firstItem="UjI-g2-7By" firstAttribute="top" secondItem="pSi-P9-KIi" secondAttribute="top" constant="108" id="I7V-sx-SBa"/>
+                            <constraint firstItem="c1X-x1-b4X" firstAttribute="top" secondItem="m8Q-1F-JCh" secondAttribute="bottom" constant="42" id="Jmi-lm-Ldi"/>
+                            <constraint firstItem="pSi-P9-KIi" firstAttribute="bottom" secondItem="RpL-w3-YQA" secondAttribute="bottom" constant="303" id="Kj1-oj-vRV"/>
+                            <constraint firstItem="UuB-1k-F6A" firstAttribute="centerX" secondItem="fAa-Q5-tui" secondAttribute="centerX" id="Ucd-Rt-W2z"/>
+                            <constraint firstItem="RpL-w3-YQA" firstAttribute="centerX" secondItem="UuB-1k-F6A" secondAttribute="centerX" id="XYu-Sa-uDQ"/>
+                            <constraint firstItem="UuB-1k-F6A" firstAttribute="leading" secondItem="c1X-x1-b4X" secondAttribute="leading" id="ajK-fl-t1n"/>
+                            <constraint firstItem="RpL-w3-YQA" firstAttribute="leading" secondItem="pSi-P9-KIi" secondAttribute="leading" constant="77" id="gFO-12-gPm"/>
+                            <constraint firstItem="UjI-g2-7By" firstAttribute="centerY" secondItem="m8Q-1F-JCh" secondAttribute="centerY" id="gQP-B8-s9D"/>
+                            <constraint firstItem="m8Q-1F-JCh" firstAttribute="leading" secondItem="pSi-P9-KIi" secondAttribute="leading" constant="117" id="qUk-cC-83n"/>
+                            <constraint firstItem="UjI-g2-7By" firstAttribute="leading" secondItem="m8Q-1F-JCh" secondAttribute="trailing" constant="7" id="vsU-7I-H3s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pSi-P9-KIi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TUa-bk-5Ho"/>
+                    <connections>
+                        <outlet property="hookSwitch" destination="UjI-g2-7By" id="iR7-3s-6nR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXH-Pn-CHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.92753623188406" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+</document>
